@@ -28,10 +28,14 @@ gem 'devise'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rails-i18n'
 gem 'kaminari'
-gem 'faker'
+gem 'active_storage_validations'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rspec-rails', '~> 4.0.1'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :development do
