@@ -1,4 +1,38 @@
-<h2>Hello World</h2>
-<p>
-  The time is now: <%= Time.now %>
-</p>
+<div class="container">
+
+
+  <% if @posts.count() > 0%>
+  <% @posts.each do |post| %>
+          <div class="row">
+            <div class="card mb-3">
+              <img class="card-img-top" 
+              src="<%= url_for post.optimized_image(post.thumbnail, 586, 180) %>" 
+              alt="Blog Post Image Card" 
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= link_to post.title,post %>
+                </h5>
+                <p class="card-text">
+                  <%= post.description.to_plain_text.truncate_words(100) %>
+                </p>
+                <p class="card-text">
+                  <small class="text-muted">
+                    <%= post.updated_at.strftime("%d/%m/%Y %H:%M:%S") %> by <%= post.user.email %> | <%= post.comments.count %>
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+        
+          
+  <% end %>
+  <div class="mt-3 pagination pull-right">
+  <%= paginate @posts %>
+  </div>
+  <% else %>
+    <div class="text-align center">No posts yet.</div>
+  <% end %>
+
+  
+</div>

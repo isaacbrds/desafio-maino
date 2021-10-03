@@ -29,7 +29,10 @@ class PostsController < ApplicationController
     end
   end
 
-  def show;  end
+  def show
+    @comment = Comment.new
+    @comments = @post.comments.order("created_at DESC")
+  end
 
   def destroy 
     @post.destroy
@@ -38,7 +41,7 @@ class PostsController < ApplicationController
   private 
 
   def post_params 
-    params.require(:post).permit(:title, :description, :user_id)
+    params.require(:post).permit(:title, :description, :user_id, :thumbnail)
   end
   
   def set_post 

@@ -1,18 +1,67 @@
-<section class="py-5">
+<div style="width: 100%; height:300px; overflow-y: hidden">
+  <img class="card-img-top" 
+              src="<%= url_for @post.optimized_image(@post.thumbnail, 586, 180) %>" 
+              alt="Blog Post Image Card" 
+              />
+</div>
+<div class="container" style="margin-top: 2em">
+  <div class="row">
+    <div class="jumbotron" style="width: 100%; background-color:ivory">
+      <h1 class="display-4">
+        <%= link_to @post.title, root_path %>
+      </h1>
+      <p class="lead">
+        <%= @post.updated_at.strftime("%d/%m/%Y %H:%M:%S") %> <%= t('by') %> <%= @post.user.email %>
+      </p>
+      <hr class="my-4" />
+      <div class="post_body">
+        <%= @post.description %>
+      </div>
+    </div>
+  </div>
 
-  <p>
-    <strong>Título</strong>: <%= @post.title %>
-  </p>
+</div>
+
+<div class="container" style="margin-top: 2em">
+  <h3> <%= t('add comment') %> :</h3>
+  <div class="row">
+    
+    <div class="col-12">
+      <%= form_with model: [@post, @comment], local: true do |f| %>
+        <div class="form-group">
+          <%= f.text_area :description, class: 'form-control col-6 '%>
+            <%= f.submit t("comment"), class: 'btn btn-dark mt-3' %>
+        </div>
+        
+      <% end %>
   
-  <p>
-    <strong>Descrição</strong>: 
-    <%= @post.description %>
-  </p>
+    </div>
+  </div>
+
+
+    <div class="row">
+      <% @comments.each do |comment| %>
+        <div class="card mb-3">
+          
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= comment.user.email %> <%= t('at') %> <%= comment.created_at.strftime("%H:%M:%S de %d/%m/%Y") %>   <strong> <%= t('says') %></strong>:
+            </h5>
+            
+            <p class="card-text">
+              
+                <%= comment.description %> <br/>
+              
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+ 
   
-  <p>
-    <strong>Dono</strong> : <%= @post.user.email %>
-  </p>
+</div>
   
-  <%= link_to 'Back',  posts_path %>
-  
-</section>
+
+  <%= link_to t('back'),  posts_path %>
+
