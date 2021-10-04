@@ -1,8 +1,8 @@
-# User Manager
+# Blog
 
 # About this project
 
-This is a project to build a simple manager of users, allowing the admin's users to control the another users also import them of a spreadsheet file.
+This is a project to build a simple blog, allowing the users to control your posts and see another user's posts. This project is deployed at https://desafio-maino-isaac.herokuapp.com/
 
 # Used Technologies
 
@@ -10,7 +10,7 @@ This is a project to build a simple manager of users, allowing the admin's users
 - Ruby 
 - Rails 
 - Postgresql 
-- Docker
+
 
 ## Frontend
 
@@ -19,20 +19,21 @@ This is a project to build a simple manager of users, allowing the admin's users
 - Bootsrap 
 
 # Requirements
-- Docker and docker-compose
+- Ruby 2.7.1
 - Ruby on Rails 6.1.4
 
 ## Backend
 
 ### dependencies
--  cable_ready 
--  cancancan 
 -  devise
--  Rspec
+-  rspec
 -  factory_bot_rails
 -  faker
--  roo
 -  shoulda-matchers 
+-  active_storage_validations
+-  kaminari
+-  dotenv
+-  rails-i18n
 
 ## Frontend
 
@@ -40,42 +41,29 @@ This is a project to build a simple manager of users, allowing the admin's users
 
 - Bootstrap 
 - Popperjs
-- cable_ready 
+
 
 # How to execute this project
 
 
 ```bash
 # clone repository
-git clone https://github.com/isaacbrds/user_manager.git 
+git clone https://github.com/isaacbrds/desafio-maino.git 
 
 # access the folder
-cd user_manager
-
-# Build a docker project
-docker-compose build
+cd desafio-maino
 
 # Install gems
 
-docker-compose run --rm app bundle 
+bundle install
 
 # Create a database
-docker-compose run --rm app bundle exec rails db:create db:migrate 
+rails db:create db:migrate 
 
 # Install JS libs
-docker-compose run --rm app yarn
+yarn
 
-# Create a database
-docker-compose run --rm app bundle exec rails db:seed
 
-# Run dockerized project
-
-docker-compose up
-
-# Access with admin's
-
-user: admin@mail.com
-password: 123456
 
 ```
 
@@ -85,7 +73,7 @@ password: 123456
 
 # Run rspec 
 
-docker-compose run --rm app bundle exec rspec
+rspec
 
 ```
 # Autor
