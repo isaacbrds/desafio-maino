@@ -13,17 +13,19 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.user = current_user
     if @post.save 
-      redirect_to posts_path, notice: 'post was successfully created!'
+      redirect_to posts_path, notice: t('post was successfully created!')
     else
       render :new
     end
   end
 
-  def edit; end
+  def edit 
+    redirect_to posts_path, alert: t("you don't have permission to edit this") unless @post.user == current_user
+  end
 
   def update 
     if @post.update(post_params)
-      redirect_to posts_path, notice: 'post was successfully updated!'
+      redirect_to posts_path, notice: t('post was successfully updated!')
     else
       render :edit 
     end
@@ -36,7 +38,7 @@ class PostsController < ApplicationController
 
   def destroy 
     @post.destroy
-    redirect_to posts_path, notice: 'post was successfully detroyed!'
+    redirect_to posts_path, notice: t('post was successfully detroyed!')
   end
   private 
 

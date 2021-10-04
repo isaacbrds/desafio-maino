@@ -10,23 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_10_02_115533) do
-=======
-ActiveRecord::Schema.define(version: 2021_10_02_121838) do
->>>>>>> add-post
-=======
 ActiveRecord::Schema.define(version: 2021_10_02_131221) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -75,7 +63,6 @@ ActiveRecord::Schema.define(version: 2021_10_02_131221) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
->>>>>>> master
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.bigint "user_id", null: false
@@ -84,7 +71,6 @@ ActiveRecord::Schema.define(version: 2021_10_02_131221) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
->>>>>>> add-post
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -97,15 +83,9 @@ ActiveRecord::Schema.define(version: 2021_10_02_131221) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
->>>>>>> master
   add_foreign_key "posts", "users"
->>>>>>> add-post
 end
