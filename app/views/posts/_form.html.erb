@@ -18,7 +18,13 @@
   <%= form.rich_text_area :description  %>
 </div>
 
+
 <br/>
+
+<%= form.fields_for :tags do |t| %>
+  <%= t.label :title %>
+  <%= t.text_field :title , class: 'form-control'%>
+<% end %>
 
 <div class="mt-2">
   <%= form.submit 'Enviar', class: 'btn btn-primary' %>

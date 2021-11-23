@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_rich_text :description
   has_many :comments, dependent:  :destroy
+  has_many :tags, dependent:  :destroy
+  accepts_nested_attributes_for :tags
   paginates_per 3
   has_one_attached :thumbnail
   validates :thumbnail, attached: true, content_type: ['image/png', 'image/jpg', 'image/jpeg'],

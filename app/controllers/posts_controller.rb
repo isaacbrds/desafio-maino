@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def new  
     @post = Post.new
+    @post.tags.build
   end
 
   def create
@@ -40,9 +41,12 @@ class PostsController < ApplicationController
   end
   private 
 
+
+  
   def post_params 
-    params.require(:post).permit(:title, :description, :user_id, :thumbnail)
+    params.require(:post).permit(:title, :description, :thumbnail, tags_attributes: [:id, :title])
   end
+
   
   def set_post 
     @post = Post.find(params[:id])
