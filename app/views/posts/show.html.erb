@@ -17,7 +17,12 @@
       <div class="post_body">
         <%= @post.description %>
       </div>
+
     </div>
+    <hr>
+    <% @post.tags.each do |tag| %>
+      <%= tag.title %>
+    <% end %>
   </div>
 
 </div>
