@@ -20,6 +20,7 @@
 
     </div>
     <hr>
+    <h4>Tags</h4>
     <% @post.tags.each do |tag| %>
       <%= tag.title %>
     <% end %>
@@ -66,7 +67,7 @@
  
   
 </div>
-  
+<br>  <br>
+<%= link_to t('back'),  posts_path %>
 
-  <%= link_to t('back'),  posts_path %>
 

@@ -3,11 +3,17 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   def index 
     @posts = Post.where(user: current_user)
+    
+    tag_titles = params[:tags]
+    
+    if tag_titles.present?
+      @posts = @posts.joins(:tags).where(tags: { title: tag_titles }).distinct 
+    end
   end
 
   def new  
     @post = Post.new
-    @post.tags.build
+    @tags = @post.tags.build
   end
 
   def create

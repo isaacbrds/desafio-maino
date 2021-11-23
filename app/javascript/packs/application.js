@@ -15,14 +15,9 @@ ActiveStorage.start()
 import "bootstrap"
 import "../stylesheets/application"
 
-import $ from 'jquery'
-import 'select2'
+require('jquery')
+import "@nathanvda/cocoon";
 
-$(document).on('turbolinks:load', function() {
-  $(".select2").select2({
-    tags: true,
-    tokenSeparators: [',', ' ']
-  })
-});
+
 require("trix")
 require("@rails/actiontext")

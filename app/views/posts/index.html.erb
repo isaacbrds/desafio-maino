@@ -1,4 +1,11 @@
 <section class="py-3">
+  <%= form_tag(posts_path, method: :get) do %>
+  <div class="form-group mt-3 col-sm-10">
+    Filtar por Tags: 
+      <%= text_field_tag(:tags) %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
   
   
   <table class="table">
@@ -8,6 +15,7 @@
         <th><%= t("title") %></th>
         <th><%= t('owner') %></th> </th>
         <th colspan="3"> <%= link_to "#{t('new')} Post", new_post_path %> </th>
+        <th ><%= t('tags') %></th> 
       </tr>
     </thead>
     <tbody>
@@ -16,13 +24,20 @@
         <td><%= post.id %></td>
         <td> <%= post.title %> </td>
         <td> <%= post.user.email %></td>
-        <td> <%= link_to t('edit'), edit_post_path(post) %> </td>
-        <td>
+        
+        <td > <%= link_to t('edit'), edit_post_path(post) %> </td>
+        <td >
           <%= link_to t('show'), post_path(post) %>
         </td>
-        <td>
+        <td >
           <%= link_to t('delete'), post_path(post), method: :delete, data: { confirm: 'Você está certo disso ?' } %>
         </td>
+        <td>
+          <% post.tags.each do |tag| %>
+            <%= tag.title %>
+          <% end %>
+        </td>
+        
       </tr>
       <% end %>
     </tbody>

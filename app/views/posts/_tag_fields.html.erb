@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+ 
+  <!-- COMENTÁRIO:
+    link_to_remove_association é o helper que o cocoon nos fornece para deletar algum nested
+  -->
+  <%= link_to_remove_association "remove tag", f %>
+ 
+  <br><br><br>
+</div>

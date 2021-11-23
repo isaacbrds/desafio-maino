@@ -2,6 +2,7 @@
   "name": "desafio-maino",
   "private": true,
   "dependencies": {
+    "@nathanvda/cocoon": "^1.2.14",
     "@popperjs/core": "^2.10.2",
     "@rails/actioncable": "^6.0.0",
     "@rails/actiontext": "^6.1.4-1",
@@ -9,6 +10,7 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "^5.1.1",
+    "cocoon": "github:nathanvda/cocoon",
     "jquery": "^3.6.0",
     "select2": "^4.1.0-rc.0",
     "trix": "^1.2.0",

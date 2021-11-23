@@ -24,11 +24,19 @@
 
 
 <br/>
+<h4>Tags</h4>
+<div id="tags">
+    <%= form.fields_for :tags do |tag| %>
+      <%= render 'tag_fields', f: tag %> 
+    <% end %>
 
-<%= form.fields_for :tags do |t| %>
-  <%= t.label :title %>
-  <%= t.text_field :title , class: 'form-control'%>
-<% end %>
+    <div class="links">
+      <!-- COMENTÁRIO: O link_to_add_association é um helper provido pela gem -->
+        <%= link_to_add_association 'add tags', form, :tags %>
+      <br><br>
+    </div>
+
+</div>
 
 <div class="mt-2">
   <%= form.submit 'Enviar', class: 'btn btn-primary' %>
