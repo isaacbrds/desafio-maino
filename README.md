@@ -34,6 +34,8 @@ This is a project to build a simple blog, allowing the users to control your pos
 -  kaminari
 -  dotenv
 -  rails-i18n
+-  sidekiq
+-  cocoon
 
 ## Frontend
 
