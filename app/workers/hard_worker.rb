@@ -5,7 +5,7 @@ class HardWorker
   def perform(*args)
     # Do something
     
-    puts "Running"
+    puts "Running nesse kraio puta que pariu"
     true
   end
 end
