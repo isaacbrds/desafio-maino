@@ -81,6 +81,7 @@ GEM
     childprocess (3.0.0)
     cocoon (1.2.15)
     concurrent-ruby (1.1.9)
+    connection_pool (2.2.5)
     crass (1.0.6)
     devise (4.8.0)
       bcrypt (~> 3.0)
@@ -190,6 +191,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    redis (4.5.1)
     regexp_parser (2.1.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -230,6 +232,10 @@ GEM
     semantic_range (3.0.0)
     shoulda-matchers (4.5.1)
       activesupport (>= 4.2.0)
+    sidekiq (6.3.1)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -291,10 +297,12 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4, >= 6.1.4.1)
   rails-i18n
+  redis
   rspec-rails (~> 4.0.1)
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers (~> 4.0)
+  sidekiq
   spring
   turbolinks (~> 5)
   tzinfo-data

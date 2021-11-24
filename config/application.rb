@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module DesafioMaino
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.active_job.queue_adapter = :sidekiq
     config.load_defaults 6.1
 
     # Configuration for the application, engines, and railties goes here.

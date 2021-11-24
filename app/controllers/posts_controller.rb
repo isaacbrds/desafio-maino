@@ -47,12 +47,23 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path, notice: t('post was successfully detroyed!')
   end
+
+  def import
+    
+    arquivo = Post.import params[:arquivo]
+    @response = ImportPostJob.perform_later arquivo
+    if @response
+      redirect_to posts_path, notice: t('post was successfully imported!')
+    else
+      render :index, notice: t('post was not successfully imported!')
+    end
+  end
   private 
 
 
   
   def post_params 
-    params.require(:post).permit(:title, :description, :thumbnail, tags_attributes: [:id, :title])
+    params.require(:post).permit(:title, :description, :thumbnail,tags_attributes: [:id, :title])
   end
 
   
