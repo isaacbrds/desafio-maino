@@ -4,6 +4,8 @@ class HardWorker
   
   def perform(*args)
     # Do something
+    
     puts "Running"
+    true
   end
 end
