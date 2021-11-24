@@ -3,9 +3,9 @@ class HardWorker
   sidekiq_options queue: :default 
   
   def perform(*args)
-    # Do something
     
-    puts "Running nesse kraio puta que pariu"
+    @arquivo = args[0]
+    Post.salvar_no_banco(@arquivo)
     true
   end
 end
