@@ -1,3 +1,3 @@
-web: bundle exec rails server -p $PORT
-
-importworker: bundle exec sidekiq -c 1 -q default -q import_post
+web: bundle exec puma -C config/puma.rb
+worker: bundle exec sidekiq -e production -C config/sidekiq.yml
+release: bundle exec rake db:migrate

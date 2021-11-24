@@ -52,6 +52,7 @@ class PostsController < ApplicationController
     
     arquivo = Post.import params[:arquivo]
     @response = ImportPostJob.perform_later arquivo
+    HardWorker.perform_async
     if @response
       redirect_to posts_path, notice: t('post was successfully imported!')
     else

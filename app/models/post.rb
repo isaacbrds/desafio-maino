@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   
   
   def optimized_image(image,x,y)
-    return image.variant(resize_to_fill: [x, y]).processed if image.present?
+    #return image.variant(resize_to_fill: [x, y]).processed if image.present?
   end
 
   def self.import(arquivo)
