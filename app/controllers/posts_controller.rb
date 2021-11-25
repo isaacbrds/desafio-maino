@@ -50,9 +50,17 @@ class PostsController < ApplicationController
 
   def import
     
-    arquivo = Post.import params[:arquivo]
-    #@response = ImportPostJob.perform_later arquivo
-    @response = HardWorker.perform_async(arquivo)
+    @arquivo = params[:arquivo]
+    File.open(@arquivo) do |f|
+      f.each_with_index do |linha, i|
+       coluna = linha.split(",")
+       title = "#{coluna[0]} - #{i}"
+       user_id = coluna[1]
+       @response = HardWorker.perform_async(title, user_id)
+      end
+    end
+
+    
     if @response
       redirect_to posts_path, notice: t('post was successfully imported!')
     else
