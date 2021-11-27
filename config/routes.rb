@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     collection { post :import }
   end
+  resources :tags, only: [:show]
+
 end

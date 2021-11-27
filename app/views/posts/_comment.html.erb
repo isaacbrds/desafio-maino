@@ -1,0 +1,22 @@
+<div class="row mt-3">
+  <ul class='media-list'>
+    <% @comments.each do |comment| %> 
+    <li class="media">
+      <div class="media-body">
+          <span class="text-muted pull-right">
+            <small class="text-muted">
+              <%= comment.created_at.strftime("Posted on %m/%d/%Y at: %I:%M%p") %>
+            </small>
+          </span>
+          <strong class="text-success"><%= "@#{comment.user.email}" %></strong>
+          <p>
+          <%= comment.description%>
+          </p>
+          
+        </div>
+    </li>
+    <hr>
+    <br>
+    <% end %> 
+  </ul> 
+</div>
