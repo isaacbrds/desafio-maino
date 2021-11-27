@@ -11,7 +11,7 @@
   <h2 class="mt-2 mb-3">Importar Posts</h2>
   <div class="row">
     <%= form_tag import_posts_path, multipart: true  do %>
-      <%= file_field_tag :arquivo %> <small id="emailHelp" class="form-text text-muted">Extensão permitida .txt</small>
+      <%= file_field_tag :arquivo, required: true  %> <small id="emailHelp" class="form-text text-muted">Extensão permitida .txt</small>
       <%= submit_tag "Import" , class: 'btn btn-info' %>
     <% end %>
       
