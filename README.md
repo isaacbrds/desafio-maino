@@ -2,7 +2,7 @@
 
 # About this project
 
-This is a project to build a simple blog, allowing the users to control your posts and see another user's posts. This project is deployed at https://desafio-http://desafio-maino-isaac.herokuapp.com/
+This is a project to build a simple blog, allowing the users to control your posts and see another user's posts. This project is deployed at http://desafio-maino-isaac.herokuapp.com/
 
 
 
