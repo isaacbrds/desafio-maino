@@ -2,7 +2,12 @@
 
 # About this project
 
-This is a project to build a simple blog, allowing the users to control your posts and see another user's posts. This project is deployed at https://desafio-maino-isaac.herokuapp.com/
+This is a project to build a simple blog, allowing the users to control your posts and see another user's posts. This project is deployed at https://desafio-http://desafio-maino-isaac.herokuapp.com/
+
+
+![Peek 29-11-2021 10-56](https://user-images.githubusercontent.com/6543465/143881500-b93d11ab-f2d2-4b12-b4bb-be65a9393a2a.gif)
+
+
 
 # Used Technologies
 
@@ -43,6 +48,7 @@ This is a project to build a simple blog, allowing the users to control your pos
 
 - Bootstrap 
 - Popperjs
+- Redis-Server
 
 
 # How to execute this project
