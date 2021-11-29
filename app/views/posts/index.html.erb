@@ -25,7 +25,7 @@
         <th>Id</th>
         <th><%= t("title") %></th>
         <th><%= t('owner') %></th> </th>
-        <th colspan="3"> <%= link_to "#{t('new')} Post", new_post_path %> </th>
+        <th colspan="3"> <%= link_to "#{t('new')} Post", new_post_path, class: 'btn btn-success' %></th> 
         <th ><%= t('tags') %></th> 
       </tr>
     </thead>
@@ -36,16 +36,16 @@
         <td> <%= post.title %> </td>
         <td> <%= post.user.email %></td>
         
-        <td > <%= link_to t('edit'), edit_post_path(post) %> </td>
+        <td > <%= link_to t('edit'), edit_post_path(post), class: 'btn btn-warning' %></td>
         <td >
-          <%= link_to t('show'), post_path(post) %>
+          <%= link_to t('show'), post_path(post), class: 'btn btn-info'  %>
         </td>
         <td >
-          <%= link_to t('delete'), post_path(post), method: :delete, data: { confirm: 'Você está certo disso ?' } %>
+          <%= link_to t('delete'), post_path(post), method: :delete, data: { confirm: 'Você está certo disso ?' }, class: 'btn btn-danger'  %>
         </td>
         <td>
           <% post.tags.each do |tag| %>
-            <%= tag.title %>
+           <span class="tag"><%= tag.title %></span> 
           <% end %>
         </td>
         
