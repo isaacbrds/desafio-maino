@@ -6,6 +6,7 @@ This is a project to build a simple blog, allowing the users to control your pos
 
 
 
+![usando-blog](https://user-images.githubusercontent.com/6543465/143882689-2c4d01d5-aa57-4cc8-8074-c914db4bd992.gif)
 
 
 
